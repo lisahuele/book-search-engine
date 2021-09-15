@@ -11,7 +11,7 @@ const resolvers = {
                 .populate('savedBooks')
                 return userData;
             }
-            throw new AuthenticationError('Not logged in');
+            throw new AuthenticationError('You need to be logged in!')
         }
     },
 
@@ -56,6 +56,7 @@ const resolvers = {
                 )
                 return updatedUser;
             }
+            throw new AuthenticationError('You need to be logged in!')
         }   
     }
 }
