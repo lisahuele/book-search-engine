@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+// const {authMiddleware } = require('./utils/auth');
 const path = require('path');
 
 // import ApolloServer
@@ -15,7 +16,8 @@ const PORT = process.env.PORT || 3001;
 // create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  // context: authMiddleware
 });
 
 async function startServer() {
